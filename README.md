@@ -7,8 +7,8 @@ Here is my solution. We will use GCP services:
 
 - ⛅️ We'll connect to the weather API to fetch the next-day forecast for both Paris, France, and Vilnius, Lithuania.
 
-- <img width="20" alt="image" src="https://github.com/janaom/gcp-de-project-connect-four-with-python-dataflow/assets/83917694/0887957d-db1b-4938-a9fa-f497fcebbeff"> The forecast data will be securely saved in a GCS bucket, ensuring easy access and safe storage.
-
+- <img width="20" alt="image" src="https://github.com/janaom/gcp-de-project-connect-four-with-python-dataflow/assets/83917694/0887957d-db1b-4938-a9fa-f497fcebbeff"> The forecast data will be securely saved in a GCS bucket, ensuring easy access.
+  
 - 💬 To keep you in the loop, we'll leverage Twilio to deliver the forecast as SMS messages to your phone every morning.
 
 - <img width="18" alt="image" src="https://github.com/janaom/gcp-data-engineering-etl-with-composer-dataflow/assets/83917694/4c57cf42-15d3-4ba3-bad6-65b7fb9c5094"> The best part? We'll automate the entire process using Composer/Airflow, guaranteeing a smooth and effortless experience.
