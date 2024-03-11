@@ -17,7 +17,7 @@ Here is my solution. We will use GCP services:
 
 # ⛅ OpenWeatherMap API
 
-Visit https://openweathermap.org/ and create an account. You will receive an email titled 'OpenWeatherMap API Instruction' containing your API key, endpoint, an example API call, API documentation, and more. For additional information, please visit https://openweathermap.org/api.
+Visit [https://openweathermap.org](https://openweathermap.org) and create an account. You will receive an email titled 'OpenWeatherMap API Instruction' containing your API key, endpoint, an example API call, API documentation, and more. For additional information, please visit [https://openweathermap.org/api](https://openweathermap.org/api).
 Alternatively, you can find your API key on the website. Make sure to save this API key, as we'll need it later.
 
 ![image](https://github.com/janaom/gcp-de-project-weather-forecast-sms-with-airflow/assets/83917694/3a62b649-1c36-435b-9d65-ea112fbfe64c)
@@ -97,7 +97,7 @@ Our DAG will only extract data about the minimum and maximum temperatures, as we
 {"min_temp": 9, "max_temp": 10, "rain": true, "rain_description": "light rain"}
 ```
 
-To retrieve the next day's weather forecast, we'll make use of the API endpoint that provides forecast data as part of its response. There's no need to worry about different units, as the temperatures will be returned in Celsius. This is because the API call includes the parameter units=metric which specifies that the temperature should be returned in Celsius.
+To retrieve the next day's weather forecast, we'll make use of the API endpoint that provides forecast data as part of its response. There's no need to worry about different units, as the temperatures will be returned in Celsius. This is because the API call includes the parameter `units=metric` which specifies that the temperature should be returned in Celsius.
 
 ```python
 #Weather API URL for the forecast of the next day
@@ -111,7 +111,7 @@ To retrieve the next day's weather forecast, we'll make use of the API endpoint 
         next_day_data = weather_data['list'][1]  #Assuming the 2nd element is the next day
 ```
 
-The cnt=2 parameter in the API call ensures that two forecasts are returned. By accessing weather_data['list'][1], we assume that the second element in the list corresponds to the forecast for the next day. For example, if the API is called on March 10th, the second element in the list will be the forecast for March 11th, as indicated by the "dt_txt": "2024–03–11 00:00:00".
+The `cnt=2` parameter in the API call ensures that two forecasts are returned. By accessing `weather_data['list'][1]`, we assume that the second element in the `list` corresponds to the forecast for the next day. For example, if the API is called on March 10th, the second element in the list will be the forecast for March 11th, as indicated by the "dt_txt": "2024–03–11 00:00:00".
 
 ```json
 {
@@ -208,11 +208,11 @@ The cnt=2 parameter in the API call ensures that two forecasts are returned. By 
 }
 ```
 
-I highly recommend checking the data from the API, as I'm sure there are many interesting ways to use it; visit this page to see what's included in the Free plan: https://openweathermap.org/price#weather
+I highly recommend checking the data from the API, as I'm sure there are many interesting ways to use it; visit this page to see what's included in the Free plan: [https://openweathermap.org/price#weather](https://openweathermap.org/price#weather)
 
 # 💬 Twilio
 
-Go to https://www.twilio.com and create an account. Open the Overview page, where you'll see messaging traffic from the past 30 days and recent message logs.
+Go to [https://www.twilio.com](https://www.twilio.com) and create an account. Open the Overview page, where you'll see messaging traffic from the past 30 days and recent message logs.
 
 ![image](https://github.com/janaom/gcp-de-project-weather-forecast-sms-with-airflow/assets/83917694/76488048-e886-4162-a12c-a37de62b6793)
 
@@ -269,11 +269,11 @@ I'm using a Small environment, which typically takes 15 minutes to set up.
 
 ![Screenshot (1560)](https://github.com/janaom/gcp-de-project-weather-forecast-sms-with-airflow/assets/83917694/f4f1d458-dcea-4741-aa4d-de2680cb4bf1)
 
-Ensure you install the twilio package on your Composer environment. If you don't, you won't be able to upload your DAG and will encounter a ```ModuleNotFoundError: No module named 'twilio'```.
+Ensure you install the twilio package on your Composer environment. If you don't, you won't be able to upload your DAG and will encounter a `ModuleNotFoundError: No module named 'twilio'`.
 
 ![Screenshot (1582)](https://github.com/janaom/gcp-de-project-weather-forecast-sms-with-airflow/assets/83917694/a02d3346-d237-42cc-902e-ecad35452469)
 
-You can either use variables in the code or save them in the Airflow UI. Both versions of the code are available: ```weather-forecast-sms.py``` and ```weather-forecast-sms-vars.py```.
+You can either use variables in the code or save them in the Airflow UI. Both versions of the code are available: `weather-forecast-sms.py` and `weather-forecast-sms-vars.py`.
 
 ![Screenshot (1598)](https://github.com/janaom/gcp-de-project-weather-forecast-sms-with-airflow/assets/83917694/278e1f52-c66b-4549-8299-73694cb35fd0)
 
@@ -289,7 +289,7 @@ Trigger the DAG to test the solution.
 
 ![Screenshot (1603)](https://github.com/janaom/gcp-de-project-weather-forecast-sms-with-airflow/assets/83917694/6b35433b-863d-4532-897c-ae9d63138da2)
 
-I'd like to highlight the trigger_rule I'm using for the second task. By setting trigger_rule=TriggerRule.ALL_DONE for the get_weather_data_vilnius task, you ensure that this task will execute after the get_weather_data_paris task has completed, regardless of its success or failure. This means that even if there's an exception, such as Failed to fetch weather data for Paris/FR you'll still receive weather data for Vilnius.
+I'd like to highlight the `trigger_rule` I'm using for the second task. By setting `trigger_rule=TriggerRule.ALL_DONE` for the `get_weather_data_vilnius` task, you ensure that this task will execute after the `get_weather_data_paris` task has completed, regardless of its success or failure. This means that even if there's an exception, such as `Failed to fetch weather data for Paris/FR` you'll still receive weather data for Vilnius.
 
 ```python
 get_weather_data_paris = PythonOperator(
@@ -322,5 +322,5 @@ Here's an example of the SMS/WhatsApp notifications with the weather forecast fo
 
 ![MixCollage-11-Mar-2024-03-10-PM-7515](https://github.com/janaom/gcp-de-project-weather-forecast-sms-with-airflow/assets/83917694/153ded10-362b-459e-8143-6257ebaa8611)
 
-If you have any specific questions or need further guidance, you can interact with "Ask Astro" an LLM-powered chatbot, available at https://ask.astronomer.io ✨
+If you have any specific questions or need further guidance, you can interact with "Ask Astro" an LLM-powered chatbot, available at [https://ask.astronomer.io](https://ask.astronomer.io) ✨
 
