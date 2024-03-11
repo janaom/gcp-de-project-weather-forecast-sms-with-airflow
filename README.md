@@ -97,7 +97,7 @@ Our DAG will only extract data about the minimum and maximum temperatures, as we
 {"min_temp": 9, "max_temp": 10, "rain": true, "rain_description": "light rain"}
 ```
 
-To retrieve the next day's forecast, we'll use the 'forecast' endpoint in the API call. There's no need to worry about different units, as the temperatures will be returned in Celsius. This is because the API call includes the parameter units=metric which specifies that the temperature should be returned in Celsius.
+To retrieve the next day's weather forecast, we'll make use of the API endpoint that provides forecast data as part of its response. There's no need to worry about different units, as the temperatures will be returned in Celsius. This is because the API call includes the parameter units=metric which specifies that the temperature should be returned in Celsius.
 
 ```python
 #Weather API URL for the forecast of the next day
