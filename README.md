@@ -233,11 +233,11 @@ However, after 24 hours, my solution started to fail: 'Failed to send freeform m
 ![Screenshot (1609)](https://github.com/janaom/gcp-de-project-weather-forecast-sms-with-airflow/assets/83917694/ea847f9f-c2b1-4b7f-ba88-ee031c0ec49c)
 
 
-Twilio's WhatsApp messaging service allows freeform messages outside of message templates only within a 24-hour window. After that, you must use approved message templates. I tried different options but my template was rejected by WhatsApp. 
+Twilio's WhatsApp messaging service allows freeform messages outside of message templates only within a 24-hour window. After that, you must use approved message templates. I tried different options but my template was rejected by WhatsApp. So I gave up.
 
 ![Screenshot (1607)](https://github.com/janaom/gcp-de-project-weather-forecast-sms-with-airflow/assets/83917694/fe0d5388-6c0d-4bd2-98d4-8d90b3009fd3)
 
-If you want to send notifications outside the 24-hour window without a WhatsApp Business API account, consider alternative messaging options like SMS or email. Twilio provides robust SMS and email messaging capabilities for notifications. I chose to use SMS. If you still want to try WhatsApp messages, setting up an account is easy. I added 2 versions of the code: `weather-forecast-whatsapp.py` and `weather-forecast-whatsapp-vars.py`.
+If you want to send notifications outside the 24-hour window without a WhatsApp Business API account, consider alternative messaging options like SMS or email. Twilio provides robust SMS and email messaging capabilities for notifications. I chose to use SMS. If you still want to try WhatsApp messages, setting up an account is easy. I added 2 versions of the code, check them and run with Composer/Airflow: `weather-forecast-whatsapp.py` and `weather-forecast-whatsapp-vars.py`.
 Pay attention to the format of the from/to variables: the prefix 'whatsapp' is important.
 
 ```python
@@ -246,6 +246,8 @@ to_whatsapp_number = "your-phone-number"
 <...>
 client.messages.create(body=message, from_=from_whatsapp_number, to=f"whatsapp:{to_whatsapp_number}")
 ```
+
+Let's come back to the SMS.
 
 Click on 'Send an SMS'. Follow the steps: 
 
@@ -269,7 +271,7 @@ I'm using a Small environment, which typically takes 15 minutes to set up.
 
 ![Screenshot (1560)](https://github.com/janaom/gcp-de-project-weather-forecast-sms-with-airflow/assets/83917694/f4f1d458-dcea-4741-aa4d-de2680cb4bf1)
 
-Ensure you install the twilio package on your Composer environment. If you don't, you won't be able to upload your DAG and will encounter a `ModuleNotFoundError: No module named 'twilio'`.
+Ensure you install the [twilio package](https://pypi.org/project/twilio/) on your Composer environment. If you don't, you won't be able to upload your DAG and will encounter a `ModuleNotFoundError: No module named 'twilio'`.
 
 ![Screenshot (1582)](https://github.com/janaom/gcp-de-project-weather-forecast-sms-with-airflow/assets/83917694/a02d3346-d237-42cc-902e-ecad35452469)
 
