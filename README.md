@@ -15,7 +15,7 @@ Here is my solution. We will use GCP services:
 
 ![20240310_213205](https://github.com/janaom/gcp-de-project-weather-forecast-sms-with-airflow/assets/83917694/595e2c99-884d-485c-976b-144f7a0fa751)
 
-# OpenWeatherMap API
+# ⛅ OpenWeatherMap API
 
 Visit https://openweathermap.org/ and create an account. You will receive an email titled 'OpenWeatherMap API Instruction' containing your API key, endpoint, an example API call, API documentation, and more. For additional information, please visit https://openweathermap.org/api.
 Alternatively, you can find your API key on the website. Make sure to save this API key, as we'll need it later.
@@ -210,13 +210,13 @@ The cnt=2 parameter in the API call ensures that two forecasts are returned. By 
 
 I highly recommend checking the data from the API, as I'm sure there are many interesting ways to use it; visit this page to see what's included in the Free plan: https://openweathermap.org/price#weather
 
-# Twilio
+# 💬 Twilio
 
 Go to https://www.twilio.com and create an account. Open the Overview page, where you'll see messaging traffic from the past 30 days and recent message logs.
 
 ![image](https://github.com/janaom/gcp-de-project-weather-forecast-sms-with-airflow/assets/83917694/76488048-e886-4162-a12c-a37de62b6793)
 
-# WhatsApp/SMS notifications
+## WhatsApp/SMS notifications
 
 Initially, I tried setting up the WhatsApp option. Click on 'Try WhatsApp'. You will see a similar page. Send a WhatsApp message and connect to WhatsApp Sandbox.
 
@@ -251,7 +251,7 @@ Check the console, where you will find your Account SID and Auth Token. It's ess
 
 ![Screenshot (1578)](https://github.com/janaom/gcp-de-project-weather-forecast-sms-with-airflow/assets/83917694/2f45a3fc-960c-4580-b3a4-5238e3edba76)
 
-# Composer 2
+# ⭐ Composer 2
 
 Create a Composer 2 environment. If this is your first time, remember to grant the Cloud Composer v2 API Service Agent Extension role to the service account.
 
