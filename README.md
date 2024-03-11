@@ -304,6 +304,11 @@ get_weather_data_vilnius = PythonOperator(
 )
 ```
 
+Here is an example:
+
+![Screenshot (1600)](https://github.com/janaom/gcp-de-project-weather-forecast-sms-with-airflow/assets/83917694/03c05630-3aef-4927-be3d-e2ed5f7cde90)
+
+
 Verify that the weather forecast files are being saved in the GCS bucket as intended.
 
 ![Screenshot (1604)](https://github.com/janaom/gcp-de-project-weather-forecast-sms-with-airflow/assets/83917694/aee3d79d-e5af-4205-ab68-c6c4f4601220)
