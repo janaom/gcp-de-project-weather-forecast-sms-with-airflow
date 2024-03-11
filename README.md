@@ -314,19 +314,6 @@ Verify that the weather forecast files are being saved in the GCS bucket as inte
 ![Screenshot (1604)](https://github.com/janaom/gcp-de-project-weather-forecast-sms-with-airflow/assets/83917694/aee3d79d-e5af-4205-ab68-c6c4f4601220)
 
 
-Here's an example of the SMS/WhatsApp notifications I receive every morning at 9 AM with the weather forecast for Paris and Vilnius.
+Here's an example of the SMS/WhatsApp notifications with the weather forecast for Paris and Vilnius.
 
 ![MixCollage-11-Mar-2024-03-10-PM-7515](https://github.com/janaom/gcp-de-project-weather-forecast-sms-with-airflow/assets/83917694/153ded10-362b-459e-8143-6257ebaa8611)
-
-
-
-
-
-
-
-
-
-
-
-
-
