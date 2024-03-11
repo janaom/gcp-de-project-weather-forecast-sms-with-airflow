@@ -237,7 +237,11 @@ Twilio's WhatsApp messaging service allows freeform messages outside of message 
 
 ![Screenshot (1607)](https://github.com/janaom/gcp-de-project-weather-forecast-sms-with-airflow/assets/83917694/fe0d5388-6c0d-4bd2-98d4-8d90b3009fd3)
 
-If you want to send notifications outside the 24-hour window without a WhatsApp Business API account, consider alternative messaging options like SMS or email. Twilio provides robust SMS and email messaging capabilities for notifications. I chose to use SMS. If you still want to try WhatsApp messages, setting up an account is easy. 
+If you want to send notifications outside the 24-hour window without a WhatsApp Business API account, consider alternative messaging options like SMS or email. Twilio provides robust SMS and email messaging capabilities for notifications. I chose to use SMS. If you still want to try WhatsApp messages, setting up an account is easy. I added 2 versions of the code: `weather-forecast-whatsapp.py` and `weather-forecast-whatsapp-vars.py`.
+
+```
+client.messages.create(body=message, from_=from_whatsapp_number, to=f"whatsapp:{to_whatsapp_number}")
+```
 
 Click on 'Send an SMS'. Follow the steps: 
 
@@ -265,7 +269,7 @@ Ensure you install the twilio package on your Composer environment. If you don't
 
 ![Screenshot (1582)](https://github.com/janaom/gcp-de-project-weather-forecast-sms-with-airflow/assets/83917694/a02d3346-d237-42cc-902e-ecad35452469)
 
-You can either use variables in the code or save them in the Airflow UI. Both versions of the code are available on my GitHub repository.
+You can either use variables in the code or save them in the Airflow UI. Both versions of the code are available: ```weather-forecast-sms.py``` and ```weather-forecast-sms-vars.py```.
 
 ![Screenshot (1598)](https://github.com/janaom/gcp-de-project-weather-forecast-sms-with-airflow/assets/83917694/278e1f52-c66b-4549-8299-73694cb35fd0)
 
