@@ -239,7 +239,7 @@ Twilio's WhatsApp messaging service allows freeform messages outside of message 
 
 If you want to send notifications outside the 24-hour window without a WhatsApp Business API account, consider alternative messaging options like SMS or email. Twilio provides robust SMS and email messaging capabilities for notifications. I chose to use SMS. If you still want to try WhatsApp messages, setting up an account is easy. I added 2 versions of the code: `weather-forecast-whatsapp.py` and `weather-forecast-whatsapp-vars.py`.
 
-```
+```python
 client.messages.create(body=message, from_=from_whatsapp_number, to=f"whatsapp:{to_whatsapp_number}")
 ```
 
