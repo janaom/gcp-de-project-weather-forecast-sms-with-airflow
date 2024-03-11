@@ -257,7 +257,7 @@ Check the console, where you will find your Account SID and Auth Token. It's ess
 
 # ⭐ Composer 2
 
-Create a Composer 2 environment. If this is your first time, remember to grant the Cloud Composer v2 API Service Agent Extension role to the service account.
+Create a Composer 2 environment. If this is your first time, remember to grant the Cloud Composer v2 API Service Agent Extension role to the Service Agent account.
 
 ![Screenshot (1559)](https://github.com/janaom/gcp-de-project-weather-forecast-sms-with-airflow/assets/83917694/e72eeee4-901a-476c-a9df-5c4d58016d97)
 
