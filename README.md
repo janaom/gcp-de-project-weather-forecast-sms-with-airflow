@@ -5,13 +5,13 @@ This small project was born out of curiosity and a real-life dilemma: I'm attend
 
 Here is my solution. We will use GCP services:
 
-⛅️ We'll connect to the weather API to fetch the next-day forecast for both Paris, France, and Vilnius, Lithuania.
+- ⛅️ We'll connect to the weather API to fetch the next-day forecast for both Paris, France, and Vilnius, Lithuania.
 
-<img width="20" alt="image" src="https://github.com/janaom/gcp-de-project-connect-four-with-python-dataflow/assets/83917694/0887957d-db1b-4938-a9fa-f497fcebbeff"> The forecast data will be securely saved in a GCS bucket, ensuring easy access and safe storage.
+- <img width="20" alt="image" src="https://github.com/janaom/gcp-de-project-connect-four-with-python-dataflow/assets/83917694/0887957d-db1b-4938-a9fa-f497fcebbeff"> The forecast data will be securely saved in a GCS bucket, ensuring easy access and safe storage.
 
-💬 To keep you in the loop, we'll leverage Twilio to deliver the forecast as SMS messages to your phone every morning.
+- 💬 To keep you in the loop, we'll leverage Twilio to deliver the forecast as SMS messages to your phone every morning.
 
-<img width="18" alt="image" src="https://github.com/janaom/gcp-data-engineering-etl-with-composer-dataflow/assets/83917694/4c57cf42-15d3-4ba3-bad6-65b7fb9c5094"> The best part? We'll automate the entire process using Composer/Airflow, guaranteeing a smooth and effortless experience.
+- <img width="18" alt="image" src="https://github.com/janaom/gcp-data-engineering-etl-with-composer-dataflow/assets/83917694/4c57cf42-15d3-4ba3-bad6-65b7fb9c5094"> The best part? We'll automate the entire process using Composer/Airflow, guaranteeing a smooth and effortless experience.
 
 ![20240310_213205](https://github.com/janaom/gcp-de-project-weather-forecast-sms-with-airflow/assets/83917694/595e2c99-884d-485c-976b-144f7a0fa751)
 
