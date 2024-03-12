@@ -1,6 +1,6 @@
 # <img width="40" alt="image" src="https://github.com/janaom/gcp-data-engineering-etl-with-composer-dataflow/assets/83917694/60f8f158-3bdc-4b3d-94ae-27a12441e2a3">  GCP Data Engineering Project: Automating Weather Forecast SMS Notifications with Composer/Airflow ⛅️
 
-This small project was born out of curiosity and a real-life dilemma: I'm attending the KubeCon + CloudNativeCon Europe conference in just a few days, and I have no idea what the weather will be like in Paris 😅. So, I had this brilliant (or maybe slightly crazy) idea to create custom SMS updates for the Vilnius/Paris weather forecast. Imagine receiving a personal weather update while enjoying the conference!😎
+This small project was born out of curiosity and a practical challenge: I'm attending the KubeCon + CloudNativeCon Europe conference in just a few days, and I have no idea what the weather will be like in Paris 😅. So, I had this brilliant (or maybe slightly crazy) idea to create custom SMS updates for the Vilnius/Paris weather forecast. Imagine receiving a personal weather update while enjoying the conference!😎
 
 
 Here is my solution. We will use GCP services:
@@ -285,11 +285,13 @@ Upload your DAG to the DAGs folder in the Composer environment.
 
 After a few minutes, you should see your DAGs in the Airflow UI.
 
-![Screenshot (1605)](https://github.com/janaom/gcp-de-project-weather-forecast-sms-with-airflow/assets/83917694/d8456cc1-05b2-47ca-a19a-32f35e49d11b)
+![Screenshot (1611)](https://github.com/janaom/gcp-de-project-weather-forecast-sms-with-airflow/assets/83917694/6ab71186-9ffa-40b1-81b6-4f9813b7a510)
+
 
 Trigger the DAG to test the solution.
 
-![Screenshot (1603)](https://github.com/janaom/gcp-de-project-weather-forecast-sms-with-airflow/assets/83917694/6b35433b-863d-4532-897c-ae9d63138da2)
+![Screenshot (1614)](https://github.com/janaom/gcp-de-project-weather-forecast-sms-with-airflow/assets/83917694/0a3e6169-1032-4f0f-aad7-7b117b66070e)
+
 
 I'd like to highlight the `trigger_rule` I'm using for the second task. By setting `trigger_rule=TriggerRule.ALL_DONE` for the `get_weather_data_vilnius` task, you ensure that this task will execute after the `get_weather_data_paris` task has completed, regardless of its success or failure. This means that even if there's an exception, such as `Failed to fetch weather data for Paris/FR` you'll still receive weather data for Vilnius.
 
@@ -317,7 +319,8 @@ Here is an example:
 
 Verify that the weather forecast files are being saved in the GCS bucket as intended.
 
-![Screenshot (1604)](https://github.com/janaom/gcp-de-project-weather-forecast-sms-with-airflow/assets/83917694/aee3d79d-e5af-4205-ab68-c6c4f4601220)
+![Screenshot (1615)](https://github.com/janaom/gcp-de-project-weather-forecast-sms-with-airflow/assets/83917694/dd8d7a6c-54ae-4d01-b533-b0f13756ede6)
+
 
 
 Here's an example of the SMS/WhatsApp notifications with the weather forecast for Paris and Vilnius.
